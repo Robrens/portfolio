@@ -1,5 +1,7 @@
 <template>
-  <v-app>
+  <v-app dark>
+    <!-- <template v-if="['/en/portfolio'].indexOf($route.name) > -1" >
+    </template> -->
     <v-container>
       <nuxt/>
     </v-container>

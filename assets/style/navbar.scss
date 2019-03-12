@@ -1,10 +1,26 @@
 #navbar{
+  background-color: black;
+  z-index: 9;
   position: absolute;
-  margin: 0;
+  width: 100%;
   top: 0;
-  height: 3em;
-  img {
-    height: 1em;
-    width: 1em;
+  height: 8em;
+  select {
+    height: 100%;
+    width: 8em;
+    option {
+      height: 8em;
+      width: 8em;
+      .navbar-item-english {
+        background: url('/english_flag.svg');
+      }
+      .navbar-item-french {
+        background: url('/french_flag.png');
+      }
+      a {
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 }
