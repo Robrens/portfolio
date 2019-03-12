@@ -21,8 +21,8 @@ export default {
         },
         {
           icon: 'bubble_chart',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'Portfolio',
+          to: '/portfolio'
         }
       ],
       miniVariant: false,
