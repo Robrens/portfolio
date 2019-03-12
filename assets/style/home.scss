@@ -1,8 +1,10 @@
-.language-choice {
-  display: flex;
-  justify-content: space-around;
-  img {
+body {
+  .language-choice {
+    display: flex;
+    justify-content: space-around;
+    img {
       height: 8em;
       width: 8em;
     }
+  }
 }

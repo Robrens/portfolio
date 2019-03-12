@@ -6,8 +6,12 @@
       md6
     >
       <div class="language-choice">
-        <a href="#"><img src="../static/french_flag.png" alt="french"></a>
-        <a href="#"><img src="../static/english_flag.svg" alt="english"></a>
+        <nuxt-link class="navbar-item" to="/fr/portfolio">
+          <img src="/french_flag.png" alt="french">
+        </nuxt-link>
+        <nuxt-link class="navbar-item" to="/en/portfolio">
+          <img src="/english_flag.svg" alt="english">
+        </nuxt-link>
       </div>
     </v-flex>
   </v-layout>
