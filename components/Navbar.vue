@@ -9,7 +9,7 @@
       <li><a href="">Curiculum Vitae</a></li>
       <li><a href="">Contact</a></li>
     </ul>
-    <div class="swith-language">
+    <div class="swith-language" v-if="$route.path == '/fr/portfolio' || $route.path == '/fr/cv' || $route.path == '/fr/contact'">
       <div class="select-language"
       ref="button"
       @click="switchLanguage = !switchLanguage" 
@@ -25,6 +25,25 @@
       }">
         <nuxt-link class="navbar-item-english" to="/en/portfolio">
           <img src="/english_flag.png" alt="english">
+        </nuxt-link>
+      </div>
+    </div>
+    <div class="swith-language" v-else>
+      <div class="select-language"
+        ref="button"
+        @click="switchLanguage = !switchLanguage" 
+      >
+        <img src="/english_flag.png" alt="english">
+        <button>↓</button>
+      </div>
+      <div class="language-choice"
+      v-show="switchLanguage"
+      v-closable="{
+        exclude: ['button'],
+        handler: 'onClose'
+      }">
+        <nuxt-link class="navbar-item-french" to="/fr/portfolio">
+          <img src="/french_flag.png" alt="french">
         </nuxt-link>
       </div>
     </div>
