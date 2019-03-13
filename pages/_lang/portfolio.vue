@@ -1,10 +1,12 @@
 <template>
-  <v-layout>
+  <section>
     <navbarView></navbarView>
-    <v-flex text-xs-center>
+    <v-layout>
+      <v-flex text-xs-center>
 
-    </v-flex>
-  </v-layout>
+      </v-flex>
+    </v-layout>
+  </section>
 </template>
 <script>
 import navbarView from '~/components/Navbar.vue'

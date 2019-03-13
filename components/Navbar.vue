@@ -1,13 +1,33 @@
 <template>
   <div id="navbar">
-    <select>
-      <option value="" class="navbar-item-french" default>
-      </option>
-      <option value="">
+    <ul>
+      <li><a href="#about">Présentation</a></li>
+      <li><a href="#techno">Connaissance</a></li>
+      <li><a href="#project">Projets</a></li>
+    </ul>
+    <ul>
+      <li><a href="">Curiculum Vitae</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+    <div class="swith-language">
+      <div class="select-language"
+      ref="button"
+      @click="switchLanguage = !switchLanguage" 
+      >
+        <img src="/french_flag.png" alt="french">
+        <button>↓</button>
+      </div>
+      <div class="language-choice"
+      v-show="switchLanguage"
+      v-closable="{
+        exclude: ['button'],
+        handler: 'onClose'
+      }">
         <nuxt-link class="navbar-item-english" to="/en/portfolio">
+          <img src="/english_flag.png" alt="english">
         </nuxt-link>
-      </option>
-    </select>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -15,13 +35,12 @@ export default {
   name: 'navbarView',
   data () {
     return {
-      french: require("@/static/french_flag.png"),
-      english: require("@/static/english_flag.svg")
+      switchLanguage: false
     }
   },
   methods: {
-    toEnglish () {
-      this.$router.push('/en/portfolio')
+    onClose () {
+      this.switchLanguage = false
     }
   }
 }

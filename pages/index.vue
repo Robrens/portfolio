@@ -10,7 +10,7 @@
           <img src="/french_flag.png" alt="french">
         </nuxt-link>
         <nuxt-link class="navbar-item" to="/en/portfolio">
-          <img src="/english_flag.svg" alt="english">
+          <img src="/english_flag.png" alt="english">
         </nuxt-link>
       </div>
     </v-flex>

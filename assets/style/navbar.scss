@@ -1,25 +1,60 @@
 #navbar{
   background-color: black;
-  z-index: 9;
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
-  height: 8em;
-  select {
-    height: 100%;
-    width: 8em;
-    option {
-      height: 8em;
-      width: 8em;
-      .navbar-item-english {
-        background: url('/english_flag.svg');
+  left: 0;
+  height: 4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  ul {
+    width: 20rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: white;
       }
-      .navbar-item-french {
-        background: url('/french_flag.png');
+    }
+  }
+  .swith-language {
+    height: 2em;
+    width: 3em;
+    .select-language {
+      display: flex;
+      width: 3em;
+      height: 2em;
+      button {
+        background-color: gray;
+        color: black;
+        width: 1em;
+        height: 2em;
+        border-radius: 2px;
       }
+      img {
+        display: inline-block;
+        height: 2em;
+        width: 2em;
+      }
+    }
+    .language-choice {
+      position: absolute;
+      margin-top: 5px;
+      height: 2em;
+      width: 2em;
       a {
         height: 100%;
         width: 100%;
+        text-decoration: none;
+        img {
+        height: 100%;
+        width: 100%;
+        }
       }
     }
   }
