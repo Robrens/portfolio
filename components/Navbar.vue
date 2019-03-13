@@ -1,15 +1,23 @@
 <template>
   <div id="navbar">
-    <ul>
+    <ul v-if="this.$route.name =='lang-portfolio'">
       <li><a href="#about">Présentation</a></li>
       <li><a href="#techno">Connaissance</a></li>
       <li><a href="#project">Projets</a></li>
     </ul>
-    <ul>
-      <li><a href="">Curiculum Vitae</a></li>
-      <li><a href="">Contact</a></li>
+    <ul v-if="this.$route.name =='lang-portfolio'">
+      <li><nuxt-link to="cv">Curiculum Vitae</nuxt-link></li>
+      <li><nuxt-link to="contact">Contact</nuxt-link></li>
     </ul>
-    <div class="swith-language" v-if="$route.path == '/fr/portfolio' || $route.path == '/fr/cv' || $route.path == '/fr/contact'">
+    <ul v-else-if="this.$route.name =='lang-cv'">
+      <li><nuxt-link to="portfolio">Portfolio</nuxt-link></li>
+      <li><nuxt-link to="contact">Contact</nuxt-link></li>
+    </ul>
+    <ul v-if="this.$route.name =='lang-contact'">
+      <li><nuxt-link to="portfolio">Portfolio</nuxt-link></li>
+      <li><nuxt-link to="cv">Curiculum Vitae</nuxt-link></li>
+    </ul>
+    <div class="swith-language" v-if="$route.params.lang == 'fr'">
       <div class="select-language"
       ref="button"
       @click="switchLanguage = !switchLanguage" 
@@ -23,9 +31,7 @@
         exclude: ['button'],
         handler: 'onClose'
       }">
-        <nuxt-link class="navbar-item-english" to="/en/portfolio">
-          <img src="/english_flag.png" alt="english">
-        </nuxt-link>
+        <img src="/english_flag.png" alt="english" @click="toEnglish">
       </div>
     </div>
     <div class="swith-language" v-else>
@@ -42,9 +48,7 @@
         exclude: ['button'],
         handler: 'onClose'
       }">
-        <nuxt-link class="navbar-item-french" to="/fr/portfolio">
-          <img src="/french_flag.png" alt="french">
-        </nuxt-link>
+        <img src="/french_flag.png" alt="french" @click="toFrench">
       </div>
     </div>
   </div>
@@ -59,7 +63,16 @@ export default {
   },
   methods: {
     onClose () {
+      console.log(this.$route)
       this.switchLanguage = false
+    },
+    toEnglish () {
+      const newPath = this.$route.path.substring(3)
+      this.$router.go('/en/'+newPath)
+    },
+    toFrench () {
+      const newPath = this.$route.path.substring(3)
+      this.$router.go('/fr/'+newPath)
     }
   }
 }
