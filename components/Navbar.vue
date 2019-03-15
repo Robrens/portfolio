@@ -31,7 +31,15 @@
         exclude: ['button'],
         handler: 'onClose'
       }">
-        <img src="/english_flag.png" alt="english" @click="toEnglish">
+      <router-link v-if="$route.fullPath === '/fr/portfolio'" to="/en/portfolio">
+        <img src="/english_flag.png" alt="english">
+      </router-link>
+      <router-link v-else-if="$route.fullPath === '/fr/cv'" to="/en/cv">
+        <img src="/english_flag.png" alt="english">
+      </router-link>
+      <router-link v-else to="/en/contact">
+        <img src="/english_flag.png" alt="english">
+      </router-link>
       </div>
     </div>
     <div class="swith-language" v-else>
@@ -48,12 +56,22 @@
         exclude: ['button'],
         handler: 'onClose'
       }">
-        <img src="/french_flag.png" alt="french" @click="toFrench">
+      <router-link v-if="$route.fullPath === '/en/portfolio'" to="/fr/portfolio">
+        <img src="/french_flag.png" alt="french">
+      </router-link>
+      <router-link v-else-if="$route.fullPath === '/en/cv'" to="/fr/cv">
+        <img src="/french_flag.png" alt="french">
+      </router-link>
+      <router-link v-else to="/fr/contact">
+        <img src="/french_flag.png" alt="french">
+      </router-link>
       </div>
     </div>
   </div>
 </template>
 <script>
+import { i18n } from '@/plugins/i18n.js'
+import { log } from 'util';
 export default {
   name: 'navbarView',
   data () {
@@ -65,14 +83,6 @@ export default {
     onClose () {
       console.log(this.$route)
       this.switchLanguage = false
-    },
-    toEnglish () {
-      const newPath = this.$route.path.substring(3)
-      this.$router.go('/en/'+newPath)
-    },
-    toFrench () {
-      const newPath = this.$route.path.substring(3)
-      this.$router.go('/fr/'+newPath)
     }
   }
 }
