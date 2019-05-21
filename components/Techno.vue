@@ -2,8 +2,10 @@
   <section id="techno">
     <h2 class="title">technologies</h2>
     <div class="search">
-      <p>rechercher une technologie</p>
-      <input type="text">
+      <div>
+        <p>rechercher une technologie</p>
+        <input type="text">
+      </div>
     </div>
     <ul>
       <li id="vuejs">

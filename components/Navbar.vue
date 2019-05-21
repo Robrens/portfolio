@@ -5,7 +5,7 @@
       <li><a href="#techno">Connaissance</a></li>
       <li><a href="#project">Projets</a></li>
     </ul>
-    <div>
+    <div class="cv">
       <a href="">download CV</a>
     </div>
     <div class="swith-language" v-if="$route.params.lang == 'fr'">

@@ -1,14 +1,22 @@
 #techno {
   .search {
+    display: flex;
+    align-self: flex-start;
     margin-top: 2em;
-    p {
-      margin-bottom: 5px;
+    margin-left: 3em;
+    flex-wrap: wrap;
+    div {
+      display: flex;
+      flex-direction: column;
+      p {
+        margin-bottom: 5px;
+      }
+      input {
+        height: 1.5em;
+        background-color: white;
+        border-radius: 5px;
+      }
     }
-    input {
-      height: 1.5em;
-      background-color: white;
-      border-radius: 5px;
-}
   }
   ul {
     display: flex;
